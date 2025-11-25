@@ -18,7 +18,9 @@
                 <nav class="navbar p-0 navbar-expand-lg fixed-top bg-dark border-bottom border-body"
                     data-bs-theme="dark">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#">My Gallery</a>
+                        <a class="navbar-brand" href="#">
+                            <img src="images/Madriaga_logo.svg" alt="My Gallery Logo" style="height: 30px;">
+                            My Gallery</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                             aria-label="Toggle navigation">
@@ -30,13 +32,13 @@
                                     <a class="nav-link" aria-current="page" href="#Home">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Family</a>
+                                    <a class="nav-link" href="#sectionFamily">Family</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Friends</a>
+                                    <a class="nav-link" href="#sectionFriends">Friends</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Colleagues</a>
+                                    <a class="nav-link" href="#sectionColleagues">Colleagues</a>
                                 </li>
                             </ul>
                         </div>
@@ -44,51 +46,78 @@
                 </nav>
             </div>
         </div>
+    </div>
+
+    <div class="container-fluid mt-3">
         <div class="row align-items-center" id="Home" style="background-color: rgb(100, 100, 100); color: white;">
-            <div class="col-12 col-md-6 mt-5 pt-5 text-center">
+            <div class="col-12 col-md-6 mt-5 pt-5 rounded-5 text-center">
                 <h1>Hi I am John Eduard Madriaga</h1>
-                <p style="color: rgb(219, 219, 219);">(Co-founder of eduCode)</p>
+                <p style="color: rgb(129, 129, 129);">(Co-founder of eduCode)</p>
                 <strong>Welcome to my Gallery Website</strong>
                 <p class="py-3 px-5">Explore more about me, everything that I do, and my interests.
                     Everyone that matters to me the most are here. Enjoy your stay!
                 </p>
             </div>
             <div class="col-12 col-md-6 text-center">
-                <img src="images/myPic.jpg" id="myPic" class=" img-fluid rounded-4 mt-5 mb-3 border-light"
+                <img src="images/myPic.jpg" id="myPic" class=" img-fluid rounded-4 mt-5 mb-5  border border-3 border-light"
                     alt="My Picture">
             </div>
         </div>
     </div>
 
     <div class="container">
-        <div class="row">
+        <hr>
+        <div class="row" id="sectionFamily">
             <div class="col">
-                <div class="display-4">
-                    My Family
-                </div>
+                <div class="display-4 my-4 text-center">My Family</div>
             </div>
         </div>
         <div class="row" id="contentFamily">
         </div>
+
+        <hr>
+
+        <div class="row" id="sectionFriends">
+            <div class="col">
+                <div class="display-4 my-4 text-center">My Friends</div>
+            </div>
+        </div>
+        <div class="row" id="contentFriends">
+        </div>
+
+        <hr>
+
+        <div class="row" id="sectionColleagues">
+            <div class="col">
+                <div class="display-4 my-4 text-center">My Colleagues</div>
+            </div>
+        </div>
+        <div class="row" id="contentColleagues">
+        </div>
     </div>
 
 
-    <button class="btn btn-primary rounded-5 p-2" onclick="changeTheme()" id="themeToggle"
-        style="position: fixed; bottom: 20px; right: 20px;"> ☾⋆ </button>
+    <button class="btn btn-secondary rounded-5 p-2" onclick="changeTheme()" id="themeToggle"
+        style="position: fixed; bottom: 20px; right: 20px;"></button>
+
     <script src="data.js"></script>
     <script>
+        // Theme Toggle
         var theme = "light";
         var body = document.getElementById("body");
+        var themeToggle = document.getElementById("themeToggle");
         function changeTheme() {
             theme = theme == "light" ? "dark" : "light";
             body.setAttribute("data-bs-theme", theme);
+            themeToggle.innerHTML = theme == "light" ? "☀️" : "🌙";
         }
+        themeToggle.innerHTML = "☀️";
 
+        //Family Function
         var contentFamily = document.getElementById("contentFamily");
-
         for (var i = 0; i < family.length; i++) {
             contentFamily.innerHTML += `
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 mb-3 col-lg-3">
         <div class="card shadow my-3">
             <img src="`+ family[i].picture + `" class="card-img-top">
             <div class="card-body">
@@ -99,7 +128,45 @@
             </div>
         </div>
         </div>
-    `;
+        `;
+        }
+
+        //Friends Function
+        var contentFriends = document.getElementById("contentFriends");
+        for (var i = 0; i < friends.length; i++) {
+            contentFriends.innerHTML += `
+        <div class="col-6 col-md-4 mb-3 col-lg-3">
+        <div class="card shadow my-3">
+            <img src="`+ friends[i].picture + `" class="card-img-top">
+            <div class="card-body">
+            <h5 class="card-title">` + friends[i].name + `</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Reason of Friendship</h6>
+            <p class="card-text">
+                ` + friends[i].description + `
+            </p>
+            </div>
+        </div>
+        </div>
+        `;
+        }
+
+        //Colleagues Function
+        var contentColleagues = document.getElementById("contentColleagues");
+        for (var i = 0; i < colleagues.length; i++) {
+            contentColleagues.innerHTML += `
+        <div class="col-6 col-md-4 mb-3">
+        <div class="card shadow my-3">
+            <img src="`+ colleagues[i].picture + `" class="card-img-top">
+            <div class="card-body">
+            <h5 class="card-title">` + colleagues[i].name + `</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Reason of Companionship</h6>
+            <p class="card-text">
+                ` + colleagues[i].description + `
+            </p>
+            </div>
+        </div>
+        </div>
+        `;
         }
     </script>
 
