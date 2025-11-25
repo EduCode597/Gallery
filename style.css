@@ -2,3 +2,7 @@
     width: 360px;
     height: 450px;
 }
+
+#themeToggle {
+    position: end;
+}
