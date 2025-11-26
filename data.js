@@ -11,7 +11,7 @@ var family = [
     },
     {
         "role": "Sister",
-        "description": 'A supportive sister who is always there willing to help.',
+        "description": 'A supportive sister who is always there willing to help in need.',
         "picture": "images/family/Sister.jpg"
     }
     ,
@@ -26,70 +26,70 @@ var family = [
 var friends = [
     {
         "name": "Gian",
-        "description": 'High school BFF',
+        "description": 'High school <br> Best Friend',
         "picture": "images/friends/Gian.jpg"
     },
     {
         "name": "Ned",
-        "description": 'Gym Bro, Barkada',
+        "description": 'Gym Bro <br> Barkada',
         "picture": "images/friends/ned.jpg"
     },
     {
         "name": "Mel Laurence",
-        "description": 'Close friend, Barkada',
+        "description": 'Close friend <br> Barkada',
         "picture": "images/friends/mel.jpg"
     }
     ,
     {
         "name": "Dave",
-        "description": 'Classmate, Barkada',
+        "description": 'Classmate <br> Barkada',
         "picture": "images/friends/deyb.jpg"
     },
     {
         "name": "Kenzy",
-        "description": 'Close Friend, Barkada',
+        "description": 'Close Friend <br> Barkada',
         "picture": "images/friends/kenzy.jpg"
     }
     ,
     {
         "name": "CJ",
-        "description": 'Close Friend, Barkada',
+        "description": 'Close Friend <br> Barkada',
         "picture": "images/friends/claine.jpg"
     }
     ,
     {
         "name": "JC",
-        "description": 'Gaming Duo, Barkada',
+        "description": 'Gaming Duo <br> Barkada',
         "picture": "images/friends/jc.jpg"
     }
     ,
     {
         "name": "Rayver",
-        "description": 'Basketball, Classmate',
+        "description": 'Basketball <br> Classmate',
         "picture": "images/friends/rayver.jpg"
     }
     ,
     {
         "name": "Jerald",
-        "description": 'Basketball, Classmate',
+        "description": 'Basketball <br> Classmate',
         "picture": "images/friends/jerald.jpg"
     }
     ,
     {
         "name": "Marc Justin",
-        "description": 'Close Friend, Basketball',
+        "description": 'Close Friend <br> Basketball',
         "picture": "images/friends/ilaw.jpg"
     }
     ,
     {
         "name": "Jay Arl",
-        "description": 'Classmate, Basketball',
+        "description": 'Classmate <br> Basketball',
         "picture": "images/friends/agoy.jpg"
     }
     ,
     {
         "name": "Louie",
-        "description": 'Gym Bro, Basketball',
+        "description": 'Gym Bro <br> Basketball',
         "picture": "images/friends/luwi.jpg"
     }
     
