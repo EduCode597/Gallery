@@ -8,6 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="images/Madriaga_logo.svg" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -39,6 +40,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#sectionColleagues">Colleagues</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#sectionGirlfriend">Girlfriend</a>
                                 </li>
                             </ul>
                         </div>
@@ -148,6 +152,7 @@
                         <button type="button" data-bs-target="#carouselFriends" data-bs-slide-to="2"
                             aria-label="Slide 3"></button>
                     </div>
+
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="images/friends/thumbnail1.jpg" class="d-block w-100" alt="..."
@@ -246,10 +251,84 @@
             </div>
         </div>
         <div class="row justify-content-center" id="contentColleagues"></div>
+
+        <hr>
+
+        <div class="row" id="sectionGirlfriend">
+            <div class="col">
+                <div class="display-4 my-4 text-center">My Girlfriend</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 p-5 rounded-3" style="background-color: rgb(73, 73, 73)">
+                <img src="images/girlfriend/cover.jpg" class="d-block w-100" style="height: 400px; object-fit: cover" />
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-6 mt-2">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/girlfriend/thumb1.jpg" class="d-block w-100 rounded-3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/girlfriend/thumb2.jpg" class="d-block w-100 rounded-3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/girlfriend/thumb3.jpg" class="d-block w-100 rounded-3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row justify-content-center" id="contentGirlfriend"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    </div>
+
+
 
     <button class="btn btn-secondary rounded-5 p-2" onclick="changeTheme()" id="themeToggle"
         style="position: fixed; bottom: 20px; right: 20px"></button>
+
+    <div class="container-fluid bg-dark text-light mt-5">
+        <div class="row py-3 px-3 align-items-center">
+            <div class="col-md-6 text-md-start">
+                <h6 class="text-uppercase fw-bold mb-2">Navigate</h6>
+                <ul class="list-unstyled">
+                    <li><a class="text-decoration-none text-light" href="#Home">Back to top</a></li>
+                    <li><a class="text-decoration-none text-light" href="#sectionFamily">Family</a></li>
+                    <li><a class="text-decoration-none text-light" href="#sectionFriends">Friends</a></li>
+                    <li><a class="text-decoration-none text-light" href="#sectionColleagues">Colleagues</a></li>
+                    <li><a class="text-decoration-none text-light" href="#sectionGirlfriend">Girlfriend</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 text-md-end text-center">
+                <h1 class="mb-1 fs-6">© 2025 EduCode. All rights reserved.</h1>
+                <img src="images/Madriaga_logo.svg" alt="myLogo" style="height: 100px; width: 100px;"/>
+                <a class="btn btn-outline-light btn-sm me-1" href=""><i class="bi bi-github"></i></a>
+                <a class="btn btn-outline-light btn-sm" href=""><i class="bi bi-facebook"></i></a>
+                <a class="btn btn-outline-light btn-sm" href=""><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </div>
 
     <script src="data.js"></script>
 
@@ -307,7 +386,7 @@
                 `</h5>
             <hr>
             <h6 class="card-subtitle mb-2 text-muted">Reason of Friendship</h6>
-            <p class="card-text ">
+            <p class="card-text">
                 <strong>` +
                 friends[i].description +
                 `</strong>
@@ -335,9 +414,30 @@
             <hr>
             <h6 class="card-subtitle mb-2 text-muted">Reason of Companionship</h6>
             <p class="card-text">
-                ` +
+                <i>` +
                 colleagues[i].description +
+                `</i>
+            </p>
+            </div>
+        </div>
+        </div>
+        `;
+        }
+
+        var contentGirlfriend = document.getElementById("contentGirlfriend");
+        for (var i = 0; i < girlfriend.length; i++) {
+            contentGirlfriend.innerHTML +=
                 `
+        <div class="col-6 col-lg-4 my-2">
+        <div class="card shadow h-100 text-center">
+            <img src="` +
+                girlfriend[i].picture +
+                `" class="card-img-top">
+            <div class="card-body">
+            <p class="card-text">
+                <strong>` +
+                girlfriend[i].description +
+                `</strong>
             </p>
             </div>
         </div>

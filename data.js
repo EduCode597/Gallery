@@ -123,3 +123,25 @@ var colleagues = [
     }
 ]
 
+var girlfriend = [
+    {
+        "description": 'I love my Girlfriend',
+        "picture": "images/girlfriend/card1.jpg"
+    },
+    {
+        "description": 'I love her cute smile',
+        "picture": "images/girlfriend/card2.jpg"
+    },
+    {
+        "description": 'I love her bright eyes',
+        "picture": "images/girlfriend/card3.jpg"
+    },
+    {
+        "description": 'I love her laugh',
+        "picture": "images/girlfriend/card4.jpg"
+    },
+    {
+        "description": 'I love her heart',
+        "picture": "images/girlfriend/card5.jpg"
+    }
+]

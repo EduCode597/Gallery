@@ -9,7 +9,7 @@
 
 .project-carousel .carousel-caption {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0.75rem;
   border-radius: 0.5rem;
@@ -30,8 +30,6 @@
 .card {
   background: rgba(255, 255, 255, 0.1) !important;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 [data-bs-theme="dark"] .card {
@@ -42,8 +40,6 @@
 .carousel.slide {
   background: rgba(73, 73, 73, 0.8) !important;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
 }
 
 body {
