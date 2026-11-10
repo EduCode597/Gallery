@@ -1,50 +1,653 @@
-#myPic {
-    width: 360px;
-    height: 450px;
+/* ==========================================================================
+   OBSIDIAN STUDIO & EMERALD MINT — NEUMORPHISM (SOFT UI) DESIGN SYSTEM
+   ========================================================================== */
+
+:root,
+[data-bs-theme="dark"] {
+    --nm-bg: #21252B;
+    --nm-surface: #21252B;
+    --nm-surface-soft: #252A31;
+    --nm-shadow-light: #2C313A;
+    --nm-shadow-dark: #16191D;
+    --nm-text: #F1F5F9;
+    --nm-text-muted: #94A3B8;
+    --nm-accent: #10B981;
+    --nm-accent-hover: #34D399;
+    --nm-accent-soft: rgba(16, 185, 129, 0.14);
+    --nm-secondary: #38BDF8;
+    --nm-secondary-soft: rgba(56, 189, 248, 0.14);
+    --nm-rose: #F43F5E;
+    --nm-rose-soft: rgba(244, 63, 94, 0.15);
+    --nm-border: rgba(255, 255, 255, 0.05);
+    --nm-navbar-bg: rgba(33, 37, 43, 0.88);
+    --nm-radius-lg: 26px;
+    --nm-radius-md: 18px;
+    --nm-radius-sm: 12px;
 }
 
-#themeToggle {
-    position: end;
+[data-bs-theme="light"] {
+    --nm-bg: #E2E8F0;
+    --nm-surface: #E2E8F0;
+    --nm-surface-soft: #E8EEF5;
+    --nm-shadow-light: #FFFFFF;
+    --nm-shadow-dark: #BEC8D6;
+    --nm-text: #0F172A;
+    --nm-text-muted: #475569;
+    --nm-accent: #059669;
+    --nm-accent-hover: #10B981;
+    --nm-accent-soft: rgba(5, 150, 105, 0.12);
+    --nm-secondary: #0284C7;
+    --nm-secondary-soft: rgba(2, 132, 199, 0.12);
+    --nm-rose: #E11D48;
+    --nm-rose-soft: rgba(225, 29, 72, 0.12);
+    --nm-border: rgba(255, 255, 255, 0.55);
+    --nm-navbar-bg: rgba(226, 232, 240, 0.88);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+}
+
+body {
+    background-color: var(--nm-bg) !important;
+    color: var(--nm-text) !important;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    transition: background-color 0.35s ease, color 0.35s ease;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   CORE NEUMORPHIC SURFACES (RAISED & INSET / PRESSED WELLS)
+   ========================================================================== */
+
+.nm-raised {
+    background: var(--nm-surface) !important;
+    border-radius: var(--nm-radius-lg);
+    box-shadow: 9px 9px 18px var(--nm-shadow-dark),
+                -9px -9px 18px var(--nm-shadow-light);
+    border: 1px solid var(--nm-border) !important;
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.28s ease,
+                background-color 0.35s ease;
+}
+
+.nm-raised-sm {
+    background: var(--nm-surface) !important;
+    border-radius: var(--nm-radius-md);
+    box-shadow: 5px 5px 11px var(--nm-shadow-dark),
+                -5px -5px 11px var(--nm-shadow-light);
+    border: 1px solid var(--nm-border) !important;
+    transition: all 0.25s ease;
+}
+
+.nm-inset {
+    background: var(--nm-surface) !important;
+    border-radius: var(--nm-radius-lg);
+    box-shadow: inset 7px 7px 14px var(--nm-shadow-dark),
+                inset -7px -7px 14px var(--nm-shadow-light);
+    border: 1px solid transparent !important;
+    transition: box-shadow 0.3s ease, background-color 0.35s ease;
+}
+
+.nm-inset-sm {
+    background: var(--nm-surface) !important;
+    border-radius: var(--nm-radius-md);
+    box-shadow: inset 4px 4px 8px var(--nm-shadow-dark),
+                inset -4px -4px 8px var(--nm-shadow-light);
+    border: 1px solid transparent !important;
+    transition: box-shadow 0.25s ease, background-color 0.35s ease;
+}
+
+/* Carved Horizontal Divider Groove (replaces flat <hr>) */
+.nm-groove {
+    height: 8px;
+    width: 100%;
+    border-radius: 999px;
+    background: var(--nm-surface);
+    box-shadow: inset 3px 3px 6px var(--nm-shadow-dark),
+                inset -3px -3px 6px var(--nm-shadow-light);
+    border: none;
+    margin: 3.5rem 0;
+}
+
+.nm-card-divider {
+    height: 5px;
+    width: 65%;
+    margin: 0.75rem auto;
+    border-radius: 999px;
+    background: var(--nm-surface);
+    box-shadow: inset 2px 2px 4px var(--nm-shadow-dark),
+                inset -2px -2px 4px var(--nm-shadow-light);
+}
+
+/* ==========================================================================
+   FLOATING NEUMORPHIC PILL NAVBAR
+   ========================================================================== */
+
+.nm-navbar-wrapper {
+    position: fixed;
+    top: 14px;
+    left: 0;
+    right: 0;
+    z-index: 1040;
+    padding: 0 1rem;
+    pointer-events: none;
+}
+
+.nm-navbar {
+    pointer-events: auto;
+    max-width: 1240px;
+    margin: 0 auto;
+    background: var(--nm-navbar-bg) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 999px;
+    padding: 0.55rem 1.25rem;
+    box-shadow: 8px 8px 18px var(--nm-shadow-dark),
+                -6px -6px 16px var(--nm-shadow-light);
+    border: 1px solid var(--nm-border) !important;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 991.98px) {
+    .nm-navbar {
+        border-radius: 24px;
+    }
+}
+
+.nm-brand-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--nm-surface);
+    box-shadow: inset 3px 3px 6px var(--nm-shadow-dark),
+                inset -3px -3px 6px var(--nm-shadow-light);
+    padding: 6px;
+}
+
+.navbar-brand {
+    color: var(--nm-text) !important;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+/* Tactile Pill Buttons & Nav Links */
+.nm-pill-btn {
+    background: var(--nm-surface);
+    color: var(--nm-text) !important;
+    border-radius: 999px;
+    padding: 0.45rem 1.05rem !important;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: 4px 4px 9px var(--nm-shadow-dark),
+                -4px -4px 9px var(--nm-shadow-light);
+    border: 1px solid var(--nm-border);
+    transition: all 0.22s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    cursor: pointer;
+}
+
+.nm-pill-btn:hover {
+    color: var(--nm-accent) !important;
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 12px var(--nm-shadow-dark),
+                -6px -6px 12px var(--nm-shadow-light);
+}
+
+.nm-pill-btn:active,
+.nm-pill-btn.active {
+    color: var(--nm-accent) !important;
+    box-shadow: inset 3px 3px 7px var(--nm-shadow-dark),
+                inset -3px -3px 7px var(--nm-shadow-light);
+    transform: translateY(0);
+}
+
+.nm-accent-cta {
+    background: linear-gradient(135deg, var(--nm-accent), #059669);
+    color: #FFFFFF !important;
+    border-radius: 999px;
+    padding: 0.65rem 1.4rem;
+    font-weight: 700;
+    font-size: 0.92rem;
+    box-shadow: 5px 5px 12px var(--nm-shadow-dark),
+                -4px -4px 10px var(--nm-shadow-light);
+    border: none;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nm-accent-cta:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 7px 7px 16px var(--nm-shadow-dark),
+                -5px -5px 12px var(--nm-shadow-light);
+}
+
+.nm-accent-cta:active {
+    transform: translateY(0);
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   HYBRID BENTO HERO SECTION (#Home)
+   ========================================================================== */
+
+#Home {
+    margin-top: 96px;
+}
+
+.nm-badge-emerald {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.4rem 0.95rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--nm-accent);
+    background: var(--nm-surface);
+    box-shadow: inset 3px 3px 6px var(--nm-shadow-dark),
+                inset -3px -3px 6px var(--nm-shadow-light);
+}
+
+.nm-badge-rose {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.4rem 0.95rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--nm-rose);
+    background: var(--nm-surface);
+    box-shadow: inset 3px 3px 6px var(--nm-shadow-dark),
+                inset -3px -3px 6px var(--nm-shadow-light);
+}
+
+.nm-text-gradient {
+    background: linear-gradient(135deg, var(--nm-accent) 0%, var(--nm-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nm-portrait-frame {
+    padding: 14px;
+    border-radius: 22px;
+    background: var(--nm-surface);
+    box-shadow: inset 6px 6px 12px var(--nm-shadow-dark),
+                inset -6px -6px 12px var(--nm-shadow-light);
+}
+
+#myPic {
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 16px;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.nm-portrait-frame:hover #myPic {
+    transform: scale(1.02);
+}
+
+.nm-chapter-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--nm-text);
+    font-weight: 600;
+    font-size: 0.88rem;
+    background: var(--nm-surface);
+    box-shadow: 4px 4px 9px var(--nm-shadow-dark),
+                -4px -4px 9px var(--nm-shadow-light);
+    border: 1px solid var(--nm-border);
+    transition: all 0.22s ease;
+}
+
+.nm-chapter-link:hover {
+    color: var(--nm-accent);
+    transform: translateX(4px);
+}
+
+.nm-chapter-link:active {
+    box-shadow: inset 3px 3px 6px var(--nm-shadow-dark),
+                inset -3px -3px 6px var(--nm-shadow-light);
+    transform: translateX(0);
+}
+
+/* ==========================================================================
+   RECESSED CAROUSEL WELLS & SLIDES
+   ========================================================================== */
+
+.nm-carousel-well {
+    padding: 18px;
+    border-radius: var(--nm-radius-lg);
+    background: var(--nm-surface);
+    box-shadow: inset 8px 8px 16px var(--nm-shadow-dark),
+                inset -8px -8px 16px var(--nm-shadow-light);
+}
+
+.project-carousel,
+#carouselExampleAutoplaying {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.project-carousel .carousel-item img {
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.94);
+    transition: transform 0.6s ease;
+}
+
+.project-carousel .carousel-item:hover img {
+    transform: scale(1.02);
 }
 
 .project-carousel .carousel-caption {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.75rem;
-  border-radius: 0.5rem;
+    background: rgba(15, 23, 42, 0.68);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    bottom: 1.5rem;
+    max-width: 540px;
+    margin: 0 auto;
+    color: #F8FAFC;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
-.navbar {
-  background: rgba(0, 0, 0, 0.5) !important;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.project-carousel .carousel-caption h5 {
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.25rem;
 }
 
-#Home {
-  background: rgba(100, 100, 100, 0.8) !important;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.project-carousel .carousel-caption p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px);
+.nm-carousel-control {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-[data-bs-theme="dark"] .card {
-  background: rgba(0, 0, 0, 0.3) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* ==========================================================================
+   SCULPTED PERSON CARDS & INSET PHOTO BEZELS
+   ========================================================================== */
+
+.nm-person-card {
+    background: var(--nm-surface) !important;
+    border-radius: var(--nm-radius-lg) !important;
+    box-shadow: 8px 8px 16px var(--nm-shadow-dark),
+                -8px -8px 16px var(--nm-shadow-light);
+    border: 1px solid var(--nm-border) !important;
+    padding: 1.1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.28s ease;
+    cursor: pointer;
+    position: relative;
 }
 
-.carousel.slide {
-  background: rgba(73, 73, 73, 0.8) !important;
-  backdrop-filter: blur(10px);
+.nm-person-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 12px 12px 24px var(--nm-shadow-dark),
+                -12px -12px 24px var(--nm-shadow-light);
 }
 
-[data-bs-theme="dark"] #footer {
-  background: rgba(20, 20, 20, 0.8) !important;
+.nm-person-card:active {
+    transform: translateY(-1px);
+    box-shadow: inset 5px 5px 10px var(--nm-shadow-dark),
+                inset -5px -5px 10px var(--nm-shadow-light);
 }
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+/* Inset Sculpted Photo Bezel */
+.nm-photo-bezel {
+    padding: 10px;
+    border-radius: 18px;
+    background: var(--nm-surface);
+    box-shadow: inset 5px 5px 10px var(--nm-shadow-dark),
+                inset -5px -5px 10px var(--nm-shadow-light);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.nm-photo-bezel img {
+    width: 100%;
+    aspect-ratio: 4 / 4.2;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 12px;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.nm-person-card:hover .nm-photo-bezel img {
+    transform: scale(1.05);
+}
+
+/* Quick Zoom Badge on Photo Hover */
+.nm-zoom-hint {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(6px);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    opacity: 0;
+    transform: scale(0.85);
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.nm-person-card:hover .nm-zoom-hint {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nm-card-title {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--nm-text);
+    margin-bottom: 0.25rem;
+}
+
+.nm-card-subtitle {
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--nm-text-muted);
+    font-weight: 700;
+}
+
+.nm-card-desc {
+    font-size: 0.88rem;
+    color: var(--nm-text-muted);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.nm-tag-pill {
+    display: inline-block;
+    padding: 0.28rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--nm-accent);
+    background: var(--nm-surface);
+    box-shadow: inset 2px 2px 5px var(--nm-shadow-dark),
+                inset -2px -2px 5px var(--nm-shadow-light);
+    margin: 0.18rem;
+}
+
+/* ==========================================================================
+   GIRLFRIEND SECTION & INTERACTIVE HEART MICRO-INTERACTION
+   ========================================================================== */
+
+.nm-heart-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--nm-border);
+    background: var(--nm-surface);
+    color: var(--nm-text-muted);
+    box-shadow: 4px 4px 8px var(--nm-shadow-dark),
+                -4px -4px 8px var(--nm-shadow-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
+}
+
+.nm-heart-btn:hover {
+    color: var(--nm-rose);
+    transform: scale(1.1);
+}
+
+.nm-heart-btn.liked {
+    color: var(--nm-rose);
+    box-shadow: inset 3px 3px 6px var(--nm-shadow-dark),
+                inset -3px -3px 6px var(--nm-shadow-light);
+    animation: nmHeartPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes nmHeartPop {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.22); }
+    100% { transform: scale(1); }
+}
+
+/* ==========================================================================
+   FLOATING THEME TOGGLE & FOOTER
+   ========================================================================== */
+
+#themeToggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1050;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--nm-surface) !important;
+    color: var(--nm-text) !important;
+    box-shadow: 7px 7px 15px var(--nm-shadow-dark),
+                -7px -7px 15px var(--nm-shadow-light);
+    border: 1px solid var(--nm-border) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    transition: all 0.25s ease;
+}
+
+#themeToggle:hover {
+    transform: translateY(-3px) rotate(12deg);
+    color: var(--nm-accent) !important;
+}
+
+#themeToggle:active {
+    box-shadow: inset 4px 4px 8px var(--nm-shadow-dark),
+                inset -4px -4px 8px var(--nm-shadow-light);
+    transform: translateY(0);
+}
+
+#footer {
+    background: var(--nm-surface) !important;
+    box-shadow: 0 -8px 20px var(--nm-shadow-dark);
+    border-top: 1px solid var(--nm-border);
+    color: var(--nm-text) !important;
+}
+
+/* ==========================================================================
+   NEUMORPHIC LIGHTBOX MODAL
+   ========================================================================== */
+
+.nm-modal-content {
+    background: var(--nm-surface) !important;
+    color: var(--nm-text) !important;
+    border-radius: var(--nm-radius-lg) !important;
+    box-shadow: 14px 14px 32px rgba(0, 0, 0, 0.5),
+                -6px -6px 20px var(--nm-shadow-light);
+    border: 1px solid var(--nm-border) !important;
+}
+
+.nm-lightbox-img-well {
+    padding: 12px;
+    border-radius: 20px;
+    background: var(--nm-surface);
+    box-shadow: inset 6px 6px 12px var(--nm-shadow-dark),
+                inset -6px -6px 12px var(--nm-shadow-light);
+}
+
+.nm-lightbox-img-well img {
+    width: 100%;
+    max-height: 440px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 14px;
+    display: block;
+}
+
+/* Filter Animation for Friends Grid */
+.nm-fade-item {
+    animation: nmFadeIn 0.32s ease forwards;
+}
+
+@keyframes nmFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }

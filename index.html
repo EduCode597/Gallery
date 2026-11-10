@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>John Eduard</title>
+    <title>John Eduard — Personal Gallery</title>
     <link rel="icon" type="image/svg+xml" href="images/Madriaga_logo.svg" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
@@ -12,443 +12,899 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 
-<body data-bs-theme="light" id="body">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 p-2 m-0">
-                <nav class="navbar p-0 navbar-expand-lg fixed-top bg-dark border-bottom border-body"
-                    data-bs-theme="dark">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">
-                            <img src="images/Madriaga_logo.svg" alt="My Gallery Logo" style="height: 30px" />
-                            My Gallery</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav justify-content-end">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#Home">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#sectionFamily">Family</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#sectionFriends">Friends</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#sectionColleagues">Colleagues</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#sectionGirlfriend">Girlfriend</a>
-                                </li>
-                            </ul>
+<body data-bs-theme="dark" id="body">
+    <!-- FLOATING NEUMORPHIC PILL NAVBAR -->
+    <div class="nm-navbar-wrapper">
+        <nav class="navbar navbar-expand-lg nm-navbar">
+            <div class="container-fluid px-2">
+                <a class="navbar-brand" href="#Home">
+                    <span class="nm-brand-badge">
+                        <img src="images/Madriaga_logo.svg" alt="My Gallery Logo" style="height: 24px; width: 24px;" />
+                    </span>
+                    <span>My Gallery</span>
+                </a>
+                <button class="navbar-toggler nm-pill-btn border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="bi bi-list fs-5"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end mt-3 mt-lg-0" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center gap-2">
+                        <li class="nav-item">
+                            <a class="nav-link nm-pill-btn active" data-nav-section="Home" aria-current="page" href="#Home">
+                                <i class="bi bi-house-door"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nm-pill-btn" data-nav-section="sectionFamily" href="#sectionFamily">
+                                <i class="bi bi-people"></i> Family
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nm-pill-btn" data-nav-section="sectionFriends" href="#sectionFriends">
+                                <i class="bi bi-dribbble"></i> Friends
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nm-pill-btn" data-nav-section="sectionColleagues" href="#sectionColleagues">
+                                <i class="bi bi-mortarboard"></i> Colleagues
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nm-pill-btn" data-nav-section="sectionGirlfriend" href="#sectionGirlfriend">
+                                <i class="bi bi-heart-fill text-danger"></i> Girlfriend
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- HYBRID 3-TILE BENTO HERO (#Home) -->
+    <div class="container py-4" id="Home">
+        <div class="row g-4 align-items-stretch">
+            <!-- Bento Tile 1: Main Bio & Recessed Counters -->
+            <div class="col-12 col-lg-6">
+                <div class="nm-raised p-4 p-md-5 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                            <span class="nm-badge-emerald">
+                                <i class="bi bi-code-slash"></i> Co-founder of eduCode
+                            </span>
+                            <span class="nm-badge-emerald" style="color: var(--nm-secondary);">
+                                <i class="bi bi-stars"></i> Personal Life Anthology
+                            </span>
+                        </div>
+                        <h1 class="display-5 fw-bold mb-2">
+                            Hi, I am <span class="nm-text-gradient">John Eduard Madriaga</span>
+                        </h1>
+                        <p class="fw-semibold mb-2" style="color: var(--nm-accent);">
+                            Welcome to my Gallery Website
+                        </p>
+                        <p class="mb-4" style="color: var(--nm-text-muted); line-height: 1.7;">
+                            This gallery showcases the people who have shaped my life into who I am today.
+                            Feel free to explore their stories, filter by circle, or click any card to view
+                            their full portrait and memories.
+                        </p>
+                        <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                            <a href="#sectionFamily" class="nm-accent-cta">
+                                Explore Chapters <i class="bi bi-arrow-down-circle"></i>
+                            </a>
+                            <a href="#sectionGirlfriend" class="nm-pill-btn">
+                                <i class="bi bi-heart-fill text-danger"></i> Special Chapter
+                            </a>
                         </div>
                     </div>
-                </nav>
+
+                    <!-- 3 Recessed Stat Wells -->
+                    <div class="row g-3 pt-2">
+                        <div class="col-4">
+                            <div class="nm-inset-sm p-3 text-center">
+                                <div class="fs-4 fw-bold" style="color: var(--nm-accent);">04</div>
+                                <div class="small fw-semibold" style="color: var(--nm-text-muted);">Family</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="nm-inset-sm p-3 text-center">
+                                <div class="fs-4 fw-bold" style="color: var(--nm-secondary);">12</div>
+                                <div class="small fw-semibold" style="color: var(--nm-text-muted);">Friends</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="nm-inset-sm p-3 text-center">
+                                <div class="fs-4 fw-bold" style="color: var(--nm-rose);">05</div>
+                                <div class="small fw-semibold" style="color: var(--nm-text-muted);">Colleagues</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bento Tile 2: Sculpted Portrait Showcase (#myPic) -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="nm-raised p-4 h-100 d-flex flex-column justify-content-between text-center">
+                    <div class="nm-portrait-frame mb-3" onclick="openHeroPortraitLightbox()" style="cursor: pointer;" title="Click to view full portrait">
+                        <img src="images/myPic.jpg" id="myPic" alt="John Eduard Madriaga" />
+                    </div>
+                    <div>
+                        <h2 class="h6 fw-bold mb-1">John Eduard Madriaga</h2>
+                        <p class="small mb-2" style="color: var(--nm-text-muted);">Builder • Dreamer • Friend</p>
+                        <span class="nm-tag-pill"><i class="bi bi-arrows-fullscreen me-1"></i>Click Photo to Zoom</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bento Tile 3: Recessed Chapter Quick-Jumpers -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="nm-inset p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="small text-uppercase fw-bold mb-3" style="color: var(--nm-text-muted); letter-spacing: 0.08em;">
+                            <i class="bi bi-compass me-1" style="color: var(--nm-accent);"></i> Gallery Chapters
+                        </div>
+                        <div class="d-flex flex-column gap-3">
+                            <a href="#sectionFamily" class="nm-chapter-link">
+                                <span><i class="bi bi-house-heart me-2" style="color: var(--nm-accent);"></i>01. My Family</span>
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                            <a href="#sectionFriends" class="nm-chapter-link">
+                                <span><i class="bi bi-dribbble me-2" style="color: var(--nm-secondary);"></i>02. My Friends</span>
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                            <a href="#sectionColleagues" class="nm-chapter-link">
+                                <span><i class="bi bi-mortarboard me-2" style="color: var(--nm-accent);"></i>03. Colleagues</span>
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                            <a href="#sectionGirlfriend" class="nm-chapter-link">
+                                <span><i class="bi bi-heart-fill me-2" style="color: var(--nm-rose);"></i>04. My Girlfriend</span>
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nm-raised-sm p-3 mt-4 d-flex align-items-center justify-content-between">
+                        <span class="small fw-semibold" style="color: var(--nm-text-muted);">Surface Theme</span>
+                        <button type="button" class="nm-pill-btn py-1 px-3" onclick="changeTheme()">
+                            <span id="heroThemeLabel">🌙 Dark Studio</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid mt-4">
-        <div class="row align-items-center" id="Home" style="background-color: rgb(100, 100, 100); color: white">
-            <div class="col-12 col-md-6 mt-3 text-center">
-                <h1>Hi I am John Eduard Madriaga</h1>
-                <p style="color: rgb(129, 129, 129)">(Co-founder of eduCode)</p>
-                <strong>Welcome to my Gallery Website</strong>
-                <p class="py-3 px-5">
-                    This is a simple gallery website showcasing the people who have
-                    shaped my life to whom I am today. Feel free to explore and browse
-                    their information to learn more about the people that matters the
-                    most in my life.
+    <!-- MAIN GALLERY CHAPTERS -->
+    <div class="container">
+        <div class="nm-groove"></div>
+
+        <!-- ================================================================
+             CHAPTER 01: MY FAMILY (#sectionFamily)
+             ================================================================ -->
+        <div class="row align-items-end justify-content-between mb-4" id="sectionFamily">
+            <div class="col-12 col-md-8">
+                <span class="nm-badge-emerald mb-2"><i class="bi bi-house-heart"></i> Chapter 01 • Foundation</span>
+                <h2 class="display-5 fw-bold mb-1">My Family</h2>
+                <p class="mb-0" style="color: var(--nm-text-muted);">
+                    The pillars of home who taught me love, resilience, and gratitude.
                 </p>
             </div>
-            <div class="col-12 col-md-6 text-center" style="background-color: rgb(100, 100, 100)">
-                <img src="images/myPic.jpg" id="myPic" class="img-fluid rounded-4 mt-5 mb-5 border border-3 border-dark"
-                    alt="My Picture" />
+            <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
+                <span class="nm-tag-pill">4 Family Members</span>
+            </div>
+        </div>
+
+        <!-- Recessed Carousel Well: Family -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="nm-carousel-well">
+                    <div id="carouselFamily" class="carousel slide project-carousel" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselFamily" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselFamily" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselFamily" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/family/familyPhoto1.jpg" class="d-block w-100" alt="Our Exploration Time in Baguio" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Our Exploration Time in Baguio</h5>
+                                    <p>Some journeys are worth remembering.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/family/familyPhoto2.jpg" class="d-block w-100" alt="Moments Like These are Meaningful" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Moments Like These are Meaningful</h5>
+                                    <p>It's never the place you are looking forward to.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/family/fammilyPhoto3.jpg" class="d-block w-100" alt="Family Always Matters" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Family Always Matters</h5>
+                                    <p>Cherish every moment spent together.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselFamily"
+                            data-bs-slide="prev">
+                            <span class="nm-carousel-control"><span class="carousel-control-prev-icon" aria-hidden="true"></span></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselFamily"
+                            data-bs-slide="next">
+                            <span class="nm-carousel-control"><span class="carousel-control-next-icon" aria-hidden="true"></span></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 justify-content-center" id="contentFamily"></div>
+
+        <div class="nm-groove"></div>
+
+        <!-- ================================================================
+             CHAPTER 02: MY FRIENDS (#sectionFriends)
+             ================================================================ -->
+        <div class="row align-items-end justify-content-between mb-4" id="sectionFriends">
+            <div class="col-12 col-md-7">
+                <span class="nm-badge-emerald mb-2" style="color: var(--nm-secondary);">
+                    <i class="bi bi-dribbble"></i> Chapter 02 • Brotherhood & Barkada
+                </span>
+                <h2 class="display-5 fw-bold mb-1">My Friends</h2>
+                <p class="mb-0" style="color: var(--nm-text-muted);">
+                    From high school best friends and gaming duos to gym bros and basketball teammates.
+                </p>
+            </div>
+            <div class="col-12 col-md-5 text-md-end mt-3 mt-md-0">
+                <span class="nm-tag-pill" id="friendsCountBadge">Showing All 12 Friends</span>
+            </div>
+        </div>
+
+        <!-- Recessed Carousel Well: Friends -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="nm-carousel-well">
+                    <div id="carouselFriends" class="carousel slide project-carousel" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselFriends" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselFriends" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselFriends" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/friends/thumbnail1.jpg" class="d-block w-100" alt="Friends could be stupid" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Friends Could Be Goofy</h5>
+                                    <p>That is why we stick together.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/friends/thumbnail2.jpg" class="d-block w-100" alt="Friends can be dependable" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Friends Can Be Dependable</h5>
+                                    <p>That is why we rise together.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/friends/thumbnail3.jpg" class="d-block w-100" alt="Friends are Special" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Friends Are Special</h5>
+                                    <p>That is why we built memories together.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselFriends"
+                            data-bs-slide="prev">
+                            <span class="nm-carousel-control"><span class="carousel-control-prev-icon" aria-hidden="true"></span></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselFriends"
+                            data-bs-slide="next">
+                            <span class="nm-carousel-control"><span class="carousel-control-next-icon" aria-hidden="true"></span></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Friends Filter Bar -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="nm-inset-sm p-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                    <span class="small fw-bold ps-2" style="color: var(--nm-text-muted);">
+                        <i class="bi bi-funnel-fill me-1" style="color: var(--nm-accent);"></i> Filter Circle:
+                    </span>
+                    <div class="d-flex flex-wrap gap-2" id="friendsFilterBar">
+                        <button type="button" class="nm-pill-btn active" onclick="filterFriends('All', this)">
+                            All (12)
+                        </button>
+                        <button type="button" class="nm-pill-btn" onclick="filterFriends('Barkada', this)">
+                            <i class="bi bi-people-fill"></i> Barkada
+                        </button>
+                        <button type="button" class="nm-pill-btn" onclick="filterFriends('Basketball', this)">
+                            <i class="bi bi-dribbble"></i> Basketball
+                        </button>
+                        <button type="button" class="nm-pill-btn" onclick="filterFriends('Gym Bro', this)">
+                            <i class="bi bi-lightning-charge-fill"></i> Gym Bro
+                        </button>
+                        <button type="button" class="nm-pill-btn" onclick="filterFriends('Classmate', this)">
+                            <i class="bi bi-journal-bookmark-fill"></i> Classmate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 justify-content-center" id="contentFriends"></div>
+
+        <div class="nm-groove"></div>
+
+        <!-- ================================================================
+             CHAPTER 03: MY COLLEAGUES (#sectionColleagues)
+             ================================================================ -->
+        <div class="row align-items-end justify-content-between mb-4" id="sectionColleagues">
+            <div class="col-12 col-md-8">
+                <span class="nm-badge-emerald mb-2"><i class="bi bi-mortarboard"></i> Chapter 03 • Campus & Craft</span>
+                <h2 class="display-5 fw-bold mb-1">My Colleagues</h2>
+                <p class="mb-0" style="color: var(--nm-text-muted);">
+                    Peers and teammates who make college life and projects enjoyable.
+                </p>
+            </div>
+            <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
+                <span class="nm-tag-pill">5 Colleagues</span>
+            </div>
+        </div>
+
+        <!-- Recessed Carousel Well: Colleagues -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="nm-carousel-well">
+                    <div id="carouselColleagues" class="carousel slide project-carousel" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselColleagues" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselColleagues" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselColleagues" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/colleagues/groupPhoto3.jpg" class="d-block w-100" alt="They Make College Life Enjoyable" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>They Make College Life Enjoyable</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/colleagues/groupPhoto1.jpg" class="d-block w-100" alt="It is Fun to Spend Time Together" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>It Is Fun to Spend Time Together</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/colleagues/groupPhoto2.jpg" class="d-block w-100" alt="We Support Each Other While Enjoying Our Youth" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>We Support Each Other While Enjoying Our Youth</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselColleagues"
+                            data-bs-slide="prev">
+                            <span class="nm-carousel-control"><span class="carousel-control-prev-icon" aria-hidden="true"></span></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselColleagues"
+                            data-bs-slide="next">
+                            <span class="nm-carousel-control"><span class="carousel-control-next-icon" aria-hidden="true"></span></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 justify-content-center" id="contentColleagues"></div>
+
+        <div class="nm-groove"></div>
+
+        <!-- ================================================================
+             CHAPTER 04: MY GIRLFRIEND (#sectionGirlfriend)
+             ================================================================ -->
+        <div class="row align-items-end justify-content-between mb-4" id="sectionGirlfriend">
+            <div class="col-12 col-md-8">
+                <span class="nm-badge-rose mb-2"><i class="bi bi-heart-fill"></i> Chapter 04 • Special Someone</span>
+                <h2 class="display-5 fw-bold mb-1">My Girlfriend</h2>
+                <p class="mb-0" style="color: var(--nm-text-muted);">
+                    Every smile, laugh, and kind moment that makes life brighter. Click the ♥ button on any card to send love!
+                </p>
+            </div>
+            <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
+                <span class="nm-badge-rose" id="girlfriendHeartCounter">
+                    <i class="bi bi-heart-fill"></i> <span id="heartCountValue">5</span> Appreciations
+                </span>
+            </div>
+        </div>
+
+        <!-- Recessed Cover Photo Well -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="nm-carousel-well">
+                    <div class="position-relative rounded-4 overflow-hidden" style="box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
+                        <img src="images/girlfriend/cover.jpg" class="d-block w-100" alt="My Girlfriend Cover"
+                            style="height: 400px; object-fit: cover;" />
+                        <div class="position-absolute bottom-0 start-0 end-0 p-4"
+                            style="background: linear-gradient(to top, rgba(15,23,42,0.85), transparent); color: #fff;">
+                            <span class="badge rounded-pill bg-danger mb-1"><i class="bi bi-stars me-1"></i>Cherished Memories</span>
+                            <h4 class="fw-bold mb-0">Always Grateful for You</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Split View: Left Recessed Autoplaying Carousel + Right Appreciation Cards -->
+        <div class="row g-4 align-items-center justify-content-center mb-5">
+            <div class="col-12 col-lg-5">
+                <div class="nm-raised p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="fw-bold small"><i class="bi bi-film me-1" style="color: var(--nm-rose);"></i> Featured Snapshots</span>
+                        <span class="nm-tag-pill" style="color: var(--nm-rose);">Autoplaying</span>
+                    </div>
+                    <div class="nm-inset-sm p-3">
+                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner rounded-3">
+                                <div class="carousel-item active">
+                                    <img src="images/girlfriend/thumb1.jpg" class="d-block w-100" alt="Girlfriend Snapshot 1"
+                                        style="height: 420px; object-fit: cover; border-radius: 14px;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/girlfriend/thumb2.jpg" class="d-block w-100" alt="Girlfriend Snapshot 2"
+                                        style="height: 420px; object-fit: cover; border-radius: 14px;" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/girlfriend/thumb3.jpg" class="d-block w-100" alt="Girlfriend Snapshot 3"
+                                        style="height: 420px; object-fit: cover; border-radius: 14px;" />
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                                data-bs-slide="prev">
+                                <span class="nm-carousel-control"><span class="carousel-control-prev-icon" aria-hidden="true"></span></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                                data-bs-slide="next">
+                                <span class="nm-carousel-control"><span class="carousel-control-next-icon" aria-hidden="true"></span></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-7">
+                <div class="row g-4 justify-content-center" id="contentGirlfriend"></div>
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <hr />
-        <div class="row" id="sectionFamily">
-            <div class="col">
-                <div class="display-4 my-4 text-center">My Family</div>
-            </div>
-        </div>
+    <!-- FLOATING NEUMORPHIC THEME TOGGLE -->
+    <button class="btn" onclick="changeTheme()" id="themeToggle" aria-label="Toggle Light/Dark Mode" title="Switch Light / Dark Surface"></button>
 
-        <div class="row">
-            <div class="col-12 p-5 rounded-3" style="background-color: rgb(73, 73, 73)">
-                <div id="carouselFamily" class="carousel slide project-carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselFamily" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselFamily" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselFamily" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
+    <!-- NEUMORPHIC LIGHTBOX MODAL -->
+    <div class="modal fade" id="galleryLightboxModal" tabindex="-1" aria-labelledby="lightboxTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content nm-modal-content p-3 p-md-4">
+                <div class="modal-header border-0 pb-2 d-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="nm-badge-emerald mb-1" id="lightboxCategory">Gallery</span>
+                        <h4 class="modal-title fw-bold mb-0" id="lightboxTitle">Person Name</h4>
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="images/family/familyPhoto1.jpg" class="d-block w-100" alt="..."
-                                style="height: 400px; object-fit: cover" />
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Our Exploration Time in Baguio</h5>
-                                <p>some journeys are worth remembering.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/family/familyPhoto2.jpg" class="d-block w-100" alt="..."
-                                style="height: 400px; object-fit: cover" />
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Moments Like These are Meaningful</h5>
-                                <p>it's never the place you are looking forward to</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/family/fammilyPhoto3.jpg" class="d-block w-100" alt="..."
-                                style="height: 400px; object-fit: cover" />
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Family Always Matters</h5>
-                                <p>cherish every moment spent together.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselFamily"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselFamily"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
+                    <button type="button" class="nm-pill-btn" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="bi bi-x-lg"></i>
                     </button>
                 </div>
-            </div>
-        </div>
-
-        <div class="row justify-content-center" id="contentFamily"></div>
-
-        <hr />
-
-        <div class="row" id="sectionFriends">
-            <div class="col">
-                <div class="display-4 my-4 text-center">My Friends</div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 p-5 rounded-3" style="background-color: rgb(73, 73, 73)">
-                <div id="carouselFriends" class="carousel slide project-carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselFriends" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselFriends" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselFriends" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
-                    </div>
-
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="images/friends/thumbnail1.jpg" class="d-block w-100" alt="..."
-                                style="height: 400px; object-fit: cover" />
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Friends could be stupid</h5>
-                                <p>that is why we stick together.</p>
+                <div class="modal-body pt-2">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-12 col-md-6">
+                            <div class="nm-lightbox-img-well">
+                                <img src="" id="lightboxImage" alt="Full Portrait" />
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="images/friends/thumbnail2.jpg" class="d-block w-100" alt="..."
-                                style="height: 400px; object-fit: cover" />
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Friends can be dependable</h5>
-                                <p>that is why we rise together.</p>
+                        <div class="col-12 col-md-6 d-flex flex-column justify-content-between">
+                            <div class="nm-inset-sm p-4 mb-3">
+                                <div class="nm-card-subtitle mb-2" id="lightboxSubtitle">About</div>
+                                <p class="fs-6 mb-3" id="lightboxDescription" style="color: var(--nm-text); line-height: 1.6;"></p>
+                                <div id="lightboxTags"></div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between gap-2">
+                                <button type="button" class="nm-pill-btn" onclick="navigateLightbox(-1)">
+                                    <i class="bi bi-chevron-left"></i> Previous
+                                </button>
+                                <span class="small fw-semibold" id="lightboxIndexLabel" style="color: var(--nm-text-muted);">1 / 1</span>
+                                <button type="button" class="nm-pill-btn" onclick="navigateLightbox(1)">
+                                    Next <i class="bi bi-chevron-right"></i>
+                                </button>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="images/friends/thumbnail3.jpg" class="d-block w-100" alt="..."
-                                style="height: 400px; object-fit: cover" />
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Friends are Special</h5>
-                                <p>that is why we built memories together.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselFriends"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselFriends"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="row justify-content-center" id="contentFriends"></div>
-
-        <hr>
-
-        <div class="row" id="sectionColleagues">
-            <div class="col">
-                <div class="display-4 my-4 text-center">My Colleagues</div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 p-5 rounded-3" style="background-color: rgb(73, 73, 73)">
-                <div id="carouselColleagues" class="carousel slide project-carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselColleagues" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselColleagues" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselColleagues" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="images/colleagues/groupPhoto3.jpg" class="d-block w-100" alt="..."
-                                style="height: 400px; object-fit: cover" />
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>They Make College Life Enjoyable</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/colleagues/groupPhoto1.jpg" class="d-block w-100" alt="..."
-                                style="height: 400px; object-fit: cover" />
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>It is Fun to Spend Time Together</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/colleagues/groupPhoto2.jpg" class="d-block w-100" alt="..."
-                                style="height: 400px; object-fit: cover" />
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>We Support Each Other While Enjoying Our Youth</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselColleagues"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselColleagues"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center" id="contentColleagues"></div>
-
-        <hr>
-
-        <div class="row" id="sectionGirlfriend">
-            <div class="col">
-                <div class="display-4 my-4 text-center">My Girlfriend</div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 p-5 rounded-3" style="background-color: rgb(73, 73, 73)">
-                <img src="images/girlfriend/cover.jpg" class="d-block w-100" style="height: 400px; object-fit: cover" />
-            </div>
-        </div>
-        <div class="row align-items-center justify-content-center">
-            <div class="col-6 mt-2">
-                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="images/girlfriend/thumb1.jpg" class="d-block w-100 rounded-3">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/girlfriend/thumb2.jpg" class="d-block w-100 rounded-3">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/girlfriend/thumb3.jpg" class="d-block w-100 rounded-3">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-            <div class="col-12 col-md-6">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="row justify-content-center" id="contentGirlfriend"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    </div>
-
-
-
-    <button class="btn btn-secondary rounded-5 p-2" onclick="changeTheme()" id="themeToggle"
-        style="position: fixed; bottom: 20px; right: 20px"></button>
-
-    <div class="container-fluid text-light mt-5" id="footer" style="background-color: rgb(42, 41, 41);">
-        <div class="row py-3 px-3 align-items-center">
-            <div class="col-md-6 text-md-start">
-                <h6 class="text-uppercase fw-bold mb-2">Navigate</h6>
-                <ul class="list-unstyled">
-                    <li><a class="text-decoration-none text-light" href="#Home">Back to top</a></li>
-                    <li><a class="text-decoration-none text-light" href="#sectionFamily">Family</a></li>
-                    <li><a class="text-decoration-none text-light" href="#sectionFriends">Friends</a></li>
-                    <li><a class="text-decoration-none text-light" href="#sectionColleagues">Colleagues</a></li>
-                    <li><a class="text-decoration-none text-light" href="#sectionGirlfriend">Girlfriend</a></li>
-                </ul>
-            </div>
-            <div class="col-md-6 text-md-end text-center">
-                <h1 class="mb-1 fs-6">© 2025 EduCode. All rights reserved.</h1>
-                <img src="images/Madriaga_logo.svg" alt="myLogo" style="height: 100px; width: 100px;"/>
-                <a class="btn btn-outline-light btn-sm me-1" href="https://educode597.github.io/"><i class="bi bi-github"></i></a>
-                <a class="btn btn-outline-light btn-sm" href="https://www.facebook.com/johneduard.madriaga.7"><i class="bi bi-facebook"></i></a>
-                <a class="btn btn-outline-light btn-sm" href="https://www.instagram.com/duard.gg/"><i class="bi bi-instagram"></i></a>
+    <!-- NEUMORPHIC FOOTER (#footer) -->
+    <footer class="container-fluid mt-5 py-5" id="footer">
+        <div class="container">
+            <div class="row g-4 align-items-center justify-content-between">
+                <div class="col-12 col-md-6 text-center text-md-start">
+                    <h6 class="text-uppercase fw-bold mb-3" style="color: var(--nm-accent); letter-spacing: 0.08em;">
+                        Quick Navigation
+                    </h6>
+                    <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2">
+                        <a class="nm-pill-btn" href="#Home"><i class="bi bi-arrow-up"></i> Back to top</a>
+                        <a class="nm-pill-btn" href="#sectionFamily">Family</a>
+                        <a class="nm-pill-btn" href="#sectionFriends">Friends</a>
+                        <a class="nm-pill-btn" href="#sectionColleagues">Colleagues</a>
+                        <a class="nm-pill-btn" href="#sectionGirlfriend">Girlfriend</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 text-center text-md-end">
+                    <div class="d-inline-flex align-items-center gap-3 mb-3">
+                        <div class="nm-brand-badge" style="width: 56px; height: 56px;">
+                            <img src="images/Madriaga_logo.svg" alt="myLogo" style="height: 36px; width: 36px;" />
+                        </div>
+                        <div class="text-start">
+                            <div class="fw-bold">John Eduard Madriaga</div>
+                            <div class="small" style="color: var(--nm-text-muted);">© 2025 EduCode. All rights reserved.</div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center justify-content-md-end gap-2">
+                        <a class="nm-pill-btn" href="https://educode597.github.io/" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a class="nm-pill-btn" href="https://www.facebook.com/johneduard.madriaga.7" target="_blank" rel="noopener" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a class="nm-pill-btn" href="https://www.instagram.com/duard.gg/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script src="data.js"></script>
-
-    <script>
-        // Theme Toggle
-        var theme = "light";
-        var body = document.getElementById("body");
-        var themeToggle = document.getElementById("themeToggle");
-        function changeTheme() {
-            theme = theme == "light" ? "dark" : "light";
-            body.setAttribute("data-bs-theme", theme);
-            themeToggle.innerHTML = theme == "light" ? "☀️" : "🌙";
-        }
-        themeToggle.innerHTML = "☀️";
-
-        //Family Function
-        var contentFamily = document.getElementById("contentFamily");
-        for (var i = 0; i < family.length; i++) {
-            contentFamily.innerHTML +=
-                `
-        <div class="col-6 col-md-4 mb-3 col-lg-3">
-        <div class="card shadow my-3 h-100 text-center">
-            <img src="` +
-                family[i].picture +
-                `" class="card-img-top p-3">
-            <div class="card-body">
-            <h5 class="card-title">` +
-                family[i].role +
-                `</h5>
-            <hr>
-            <p class="card-text">
-                ` +
-                family[i].description +
-                `
-            </p>
-            </div>
-        </div>
-        </div>
-        `;
-        }
-
-        //Friends Function
-        var contentFriends = document.getElementById("contentFriends");
-        for (var i = 0; i < friends.length; i++) {
-            contentFriends.innerHTML +=
-                `
-        <div class="col-6 col-md-4 mb-3 col-lg-3">
-        <div class="card shadow-sm my-3 text-center">
-            <img src="` +
-                friends[i].picture +
-                `" class="card-img-top p-3">
-            <div class="card-body">
-            <h5 class="card-title">` +
-                friends[i].name +
-                `</h5>
-            <hr>
-            <h6 class="card-subtitle mb-2 text-muted">Reason of Friendship</h6>
-            <p class="card-text">
-                <strong>` +
-                friends[i].description +
-                `</strong>
-            </p>
-            </div>
-        </div>
-        </div>
-        `;
-        }
-
-        //Colleagues Function
-        var contentColleagues = document.getElementById("contentColleagues");
-        for (var i = 0; i < colleagues.length; i++) {
-            contentColleagues.innerHTML +=
-                `
-        <div class="col-6 col-md-4 mb-5"> 
-        <div class="card shadow my-3 h-100 text-center">
-            <img src="` +
-                colleagues[i].picture +
-                `" class="card-img-top p-3">
-            <div class="card-body">
-            <h5 class="card-title">` +
-                colleagues[i].name +
-                `</h5>
-            <hr>
-            <h6 class="card-subtitle mb-2 text-muted">Reason of Companionship</h6>
-            <p class="card-text">
-                <i>` +
-                colleagues[i].description +
-                `</i>
-            </p>
-            </div>
-        </div>
-        </div>
-        `;
-        }
-
-        var contentGirlfriend = document.getElementById("contentGirlfriend");
-        for (var i = 0; i < girlfriend.length; i++) {
-            contentGirlfriend.innerHTML +=
-                `
-        <div class="col-6 col-lg-4 my-2">
-        <div class="card shadow h-100 text-center">
-            <img src="` +
-                girlfriend[i].picture +
-                `" class="card-img-top">
-            <div class="card-body">
-            <p class="card-text">
-                <strong>` +
-                girlfriend[i].description +
-                `</strong>
-            </p>
-            </div>
-        </div>
-        </div>
-        `;
-        }
-    </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
+    <script>
+        // ====================================================================
+        // 1. THEME TOGGLE (OBSIDIAN STUDIO DARK FIRST <-> LIGHT STUDIO SLATE)
+        // ====================================================================
+        var theme = "dark";
+        var body = document.getElementById("body");
+        var themeToggle = document.getElementById("themeToggle");
+        var heroThemeLabel = document.getElementById("heroThemeLabel");
+
+        function syncThemeUI() {
+            body.setAttribute("data-bs-theme", theme);
+            themeToggle.innerHTML = theme === "light" ? "☀️" : "🌙";
+            if (heroThemeLabel) {
+                heroThemeLabel.innerHTML = theme === "light" ? "☀️ Light Studio" : "🌙 Dark Studio";
+            }
+        }
+
+        function changeTheme() {
+            theme = theme === "light" ? "dark" : "light";
+            syncThemeUI();
+        }
+        syncThemeUI();
+
+        // ====================================================================
+        // 2. UNIFIED LIGHTBOX REGISTRY & MODAL CONTROLLER
+        // ====================================================================
+        var lightboxItems = [];
+        var currentLightboxIndex = 0;
+        var lightboxModalInstance = null;
+
+        function registerLightboxItem(item) {
+            var idx = lightboxItems.length;
+            lightboxItems.push(item);
+            return idx;
+        }
+
+        function openLightbox(index) {
+            if (index < 0 || index >= lightboxItems.length) return;
+            currentLightboxIndex = index;
+            var item = lightboxItems[index];
+
+            document.getElementById("lightboxCategory").textContent = item.category;
+            document.getElementById("lightboxTitle").textContent = item.title;
+            document.getElementById("lightboxSubtitle").textContent = item.subtitle;
+            document.getElementById("lightboxDescription").innerHTML = item.description;
+            document.getElementById("lightboxImage").src = item.picture;
+            document.getElementById("lightboxImage").alt = item.title;
+            document.getElementById("lightboxIndexLabel").textContent = (index + 1) + " / " + lightboxItems.length;
+
+            var tagsHtml = "";
+            if (item.tags && item.tags.length) {
+                for (var t = 0; t < item.tags.length; t++) {
+                    tagsHtml += '<span class="nm-tag-pill">' + item.tags[t] + '</span>';
+                }
+            }
+            document.getElementById("lightboxTags").innerHTML = tagsHtml;
+
+            var modalEl = document.getElementById("galleryLightboxModal");
+            if (!lightboxModalInstance) {
+                lightboxModalInstance = new bootstrap.Modal(modalEl);
+            }
+            lightboxModalInstance.show();
+        }
+
+        function navigateLightbox(delta) {
+            var nextIdx = (currentLightboxIndex + delta + lightboxItems.length) % lightboxItems.length;
+            openLightbox(nextIdx);
+        }
+
+        function openHeroPortraitLightbox() {
+            openLightbox(0);
+        }
+
+        // Register Hero Portrait at index 0
+        registerLightboxItem({
+            category: "Gallery Creator",
+            title: "John Eduard Madriaga",
+            subtitle: "Co-founder of eduCode",
+            description: "Welcome to my Gallery Website showcasing the family, friends, colleagues, and partner who have shaped my life into who I am today.",
+            picture: "images/myPic.jpg",
+            tags: ["eduCode", "Creator", "Gallery"]
+        });
+
+        // ====================================================================
+        // 3. RENDER FAMILY SECTION (#contentFamily)
+        // ====================================================================
+        var contentFamily = document.getElementById("contentFamily");
+        for (var i = 0; i < family.length; i++) {
+            var fam = family[i];
+            var lbIndex = registerLightboxItem({
+                category: "Chapter 01 • My Family",
+                title: fam.role,
+                subtitle: fam.tag || "Family Member",
+                description: fam.description,
+                picture: fam.picture,
+                tags: [fam.role, fam.tag || "Family"]
+            });
+
+            contentFamily.innerHTML += `
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="nm-person-card text-center" onclick="openLightbox(${lbIndex})">
+                        <div>
+                            <div class="nm-photo-bezel">
+                                <img src="${fam.picture}" alt="${fam.role}" loading="lazy" />
+                                <span class="nm-zoom-hint"><i class="bi bi-arrows-angle-expand"></i></span>
+                            </div>
+                            <h5 class="nm-card-title">${fam.role}</h5>
+                            <span class="nm-tag-pill">${fam.tag || "Family"}</span>
+                            <div class="nm-card-divider"></div>
+                            <p class="nm-card-desc">${fam.description}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ====================================================================
+        // 4. RENDER & FILTER FRIENDS SECTION (#contentFriends)
+        // ====================================================================
+        var contentFriends = document.getElementById("contentFriends");
+        var friendLightboxIndices = [];
+
+        for (var j = 0; j < friends.length; j++) {
+            var fr = friends[j];
+            var parsedTags = fr.tags || fr.description.split(/<br\s*\/?>/i).map(function (s) { return s.trim(); });
+            var lbIdx = registerLightboxItem({
+                category: "Chapter 02 • My Friends",
+                title: fr.name,
+                subtitle: "Reason of Friendship",
+                description: fr.description.replace(/<br\s*\/?>/gi, " • "),
+                picture: fr.picture,
+                tags: parsedTags
+            });
+            friendLightboxIndices.push(lbIdx);
+        }
+
+        function renderFriends(filterCategory) {
+            contentFriends.innerHTML = "";
+            var shownCount = 0;
+
+            for (var i = 0; i < friends.length; i++) {
+                var fr = friends[i];
+                var rawParts = fr.description.split(/<br\s*\/?>/i).map(function (s) { return s.trim(); });
+                var allTags = fr.tags || rawParts;
+                var matches = filterCategory === "All" || allTags.some(function (t) {
+                    return t.toLowerCase() === filterCategory.toLowerCase();
+                }) || fr.description.toLowerCase().indexOf(filterCategory.toLowerCase()) !== -1;
+
+                if (!matches) continue;
+                shownCount++;
+
+                var pillsHtml = rawParts.map(function (part) {
+                    return '<span class="nm-tag-pill">' + part + '</span>';
+                }).join("");
+
+                contentFriends.innerHTML += `
+                    <div class="col-6 col-md-4 col-lg-3 nm-fade-item">
+                        <div class="nm-person-card text-center" onclick="openLightbox(${friendLightboxIndices[i]})">
+                            <div>
+                                <div class="nm-photo-bezel">
+                                    <img src="${fr.picture}" alt="${fr.name}" loading="lazy" />
+                                    <span class="nm-zoom-hint"><i class="bi bi-arrows-angle-expand"></i></span>
+                                </div>
+                                <h5 class="nm-card-title">${fr.name}</h5>
+                                <div class="nm-card-subtitle mb-1">Reason of Friendship</div>
+                                <div class="nm-card-divider"></div>
+                                <div class="d-flex flex-wrap justify-content-center gap-1 mt-2">
+                                    ${pillsHtml}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            var badge = document.getElementById("friendsCountBadge");
+            if (badge) {
+                badge.textContent = filterCategory === "All"
+                    ? "Showing All " + shownCount + " Friends"
+                    : "Showing " + shownCount + " in " + filterCategory;
+            }
+        }
+
+        function filterFriends(category, btnEl) {
+            var buttons = document.querySelectorAll("#friendsFilterBar .nm-pill-btn");
+            buttons.forEach(function (b) { b.classList.remove("active"); });
+            if (btnEl) btnEl.classList.add("active");
+            renderFriends(category);
+        }
+
+        renderFriends("All");
+
+        // ====================================================================
+        // 5. RENDER COLLEAGUES SECTION (#contentColleagues)
+        // ====================================================================
+        var contentColleagues = document.getElementById("contentColleagues");
+        for (var k = 0; k < colleagues.length; k++) {
+            var col = colleagues[k];
+            var colLbIdx = registerLightboxItem({
+                category: "Chapter 03 • My Colleagues",
+                title: col.name,
+                subtitle: "Reason of Companionship",
+                description: col.description,
+                picture: col.picture,
+                tags: [col.tag || "Colleague", "College Life"]
+            });
+
+            contentColleagues.innerHTML += `
+                <div class="col-6 col-md-4">
+                    <div class="nm-person-card text-center" onclick="openLightbox(${colLbIdx})">
+                        <div>
+                            <div class="nm-photo-bezel">
+                                <img src="${col.picture}" alt="${col.name}" loading="lazy" />
+                                <span class="nm-zoom-hint"><i class="bi bi-arrows-angle-expand"></i></span>
+                            </div>
+                            <h5 class="nm-card-title">${col.name}</h5>
+                            <div class="nm-card-subtitle mb-1">Reason of Companionship</div>
+                            <span class="nm-tag-pill">${col.tag || "Colleague"}</span>
+                            <div class="nm-card-divider"></div>
+                            <p class="nm-card-desc fst-italic">"${col.description}"</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ====================================================================
+        // 6. RENDER GIRLFRIEND SECTION WITH HEART MICRO-INTERACTION (#contentGirlfriend)
+        // ====================================================================
+        var contentGirlfriend = document.getElementById("contentGirlfriend");
+        var likedGirlfriendCards = { 0: true, 1: true, 2: true, 3: true, 4: true };
+
+        function updateHeartCounter() {
+            var total = 0;
+            Object.keys(likedGirlfriendCards).forEach(function (key) {
+                if (likedGirlfriendCards[key]) total++;
+            });
+            var countEl = document.getElementById("heartCountValue");
+            if (countEl) countEl.textContent = total;
+        }
+
+        function toggleGirlfriendHeart(event, idx) {
+            event.stopPropagation();
+            likedGirlfriendCards[idx] = !likedGirlfriendCards[idx];
+            var btn = document.getElementById("gfHeartBtn-" + idx);
+            if (btn) {
+                if (likedGirlfriendCards[idx]) {
+                    btn.classList.add("liked");
+                    btn.innerHTML = '<i class="bi bi-heart-fill"></i>';
+                } else {
+                    btn.classList.remove("liked");
+                    btn.innerHTML = '<i class="bi bi-heart"></i>';
+                }
+            }
+            updateHeartCounter();
+        }
+
+        for (var g = 0; g < girlfriend.length; g++) {
+            var gf = girlfriend[g];
+            var gfLbIdx = registerLightboxItem({
+                category: "Chapter 04 • My Girlfriend ♥",
+                title: gf.description,
+                subtitle: gf.subtitle || "Special Memory",
+                description: gf.description + " — " + (gf.subtitle || "Forever grateful for every moment together."),
+                picture: gf.picture,
+                tags: ["Love", "Cherished Memory"]
+            });
+
+            contentGirlfriend.innerHTML += `
+                <div class="col-6 col-md-4">
+                    <div class="nm-person-card text-center" onclick="openLightbox(${gfLbIdx})">
+                        <div>
+                            <div class="nm-photo-bezel">
+                                <img src="${gf.picture}" alt="${gf.description}" loading="lazy" />
+                                <span class="nm-zoom-hint"><i class="bi bi-arrows-angle-expand"></i></span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between gap-2 pt-1 text-start">
+                            <div>
+                                <div class="fw-bold small" style="color: var(--nm-text);">${gf.description}</div>
+                                <div class="small" style="color: var(--nm-text-muted); font-size: 0.75rem;">${gf.subtitle || "Special Memory"}</div>
+                            </div>
+                            <button type="button" id="gfHeartBtn-${g}" class="nm-heart-btn liked"
+                                onclick="toggleGirlfriendHeart(event, ${g})" aria-label="Like memory">
+                                <i class="bi bi-heart-fill"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ====================================================================
+        // 7. NAVBAR SCROLL-SPY ACTIVE HIGHLIGHTING
+        // ====================================================================
+        var sectionIds = ["Home", "sectionFamily", "sectionFriends", "sectionColleagues", "sectionGirlfriend"];
+        window.addEventListener("scroll", function () {
+            var scrollPos = window.scrollY + 180;
+            var currentId = "Home";
+            for (var s = 0; s < sectionIds.length; s++) {
+                var sec = document.getElementById(sectionIds[s]);
+                if (sec && sec.offsetTop <= scrollPos) {
+                    currentId = sectionIds[s];
+                }
+            }
+            var navLinks = document.querySelectorAll("[data-nav-section]");
+            navLinks.forEach(function (link) {
+                if (link.getAttribute("data-nav-section") === currentId) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
