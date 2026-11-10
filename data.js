@@ -1,3 +1,67 @@
+/* ==========================================================================
+   GALLERY CONTENT & CAROUSEL DATA (data.js)
+   Edit this single file to update any photo, caption, person, or tag!
+   ========================================================================== */
+
+var carousels = {
+    family: [
+        {
+            "picture": "images/family/familyPhoto1.jpg",
+            "title": "Our Exploration Time in Baguio",
+            "caption": "Some journeys are worth remembering."
+        },
+        {
+            "picture": "images/family/familyPhoto2.jpg",
+            "title": "Moments Like These are Meaningful",
+            "caption": "It's never the place you are looking forward to."
+        },
+        {
+            "picture": "images/family/fammilyPhoto3.jpg",
+            "title": "Family Always Matters",
+            "caption": "Cherish every moment spent together."
+        }
+    ],
+    friends: [
+        {
+            "picture": "images/friends/thumbnail1.jpg",
+            "title": "Friends Could Be Goofy",
+            "caption": "That is why we stick together."
+        },
+        {
+            "picture": "images/friends/thumbnail2.jpg",
+            "title": "Friends Can Be Dependable",
+            "caption": "That is why we rise together."
+        },
+        {
+            "picture": "images/friends/thumbnail3.jpg",
+            "title": "Friends Are Special",
+            "caption": "That is why we built memories together."
+        }
+    ],
+    colleagues: [
+        {
+            "picture": "images/colleagues/groupPhoto3.jpg",
+            "title": "They Make College Life Enjoyable",
+            "caption": ""
+        },
+        {
+            "picture": "images/colleagues/groupPhoto1.jpg",
+            "title": "It Is Fun to Spend Time Together",
+            "caption": ""
+        },
+        {
+            "picture": "images/colleagues/groupPhoto2.jpg",
+            "title": "We Support Each Other While Enjoying Our Youth",
+            "caption": ""
+        }
+    ],
+    girlfriend: [
+        { "picture": "images/girlfriend/thumb1.jpg", "title": "Girlfriend Snapshot 1" },
+        { "picture": "images/girlfriend/thumb2.jpg", "title": "Girlfriend Snapshot 2" },
+        { "picture": "images/girlfriend/thumb3.jpg", "title": "Girlfriend Snapshot 3" }
+    ]
+};
+
 var family = [
     {
         "role": "Mother",

@@ -1,0 +1,160 @@
+/* ==========================================================================
+   3. PAGE LAYOUT SECTIONS (css/layout.css)
+   Floating pill navbar, Bento Hero (#Home), theme toggle, and footer.
+   ========================================================================== */
+
+/* Floating Pill Navbar */
+.nm-navbar-wrapper {
+    position: fixed;
+    top: 14px;
+    left: 0;
+    right: 0;
+    z-index: 1040;
+    padding: 0 1rem;
+    pointer-events: none;
+}
+
+.nm-navbar {
+    pointer-events: auto;
+    max-width: 1240px;
+    margin: 0 auto;
+    background: var(--nm-navbar-bg) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 999px;
+    padding: 0.55rem 1.25rem;
+    box-shadow: 8px 8px 18px var(--nm-shadow-dark),
+                -6px -6px 16px var(--nm-shadow-light);
+    border: 1px solid var(--nm-border) !important;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 991.98px) {
+    .nm-navbar {
+        border-radius: 24px;
+    }
+}
+
+.nm-brand-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--nm-surface);
+    box-shadow: inset 3px 3px 6px var(--nm-shadow-dark),
+                inset -3px -3px 6px var(--nm-shadow-light);
+    padding: 6px;
+}
+
+.navbar-brand {
+    color: var(--nm-text) !important;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+/* Hybrid Bento Hero (#Home) */
+#Home {
+    margin-top: 96px;
+}
+
+.nm-text-gradient {
+    background: linear-gradient(135deg, var(--nm-accent) 0%, var(--nm-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nm-portrait-frame {
+    padding: 14px;
+    border-radius: 22px;
+    background: var(--nm-surface);
+    box-shadow: inset 6px 6px 12px var(--nm-shadow-dark),
+                inset -6px -6px 12px var(--nm-shadow-light);
+}
+
+#myPic {
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 16px;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.nm-portrait-frame:hover #myPic {
+    transform: scale(1.02);
+}
+
+.nm-chapter-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--nm-text);
+    font-weight: 600;
+    font-size: 0.88rem;
+    background: var(--nm-surface);
+    box-shadow: 4px 4px 9px var(--nm-shadow-dark),
+                -4px -4px 9px var(--nm-shadow-light);
+    border: 1px solid var(--nm-border);
+    transition: all 0.22s ease;
+}
+
+.nm-chapter-link:hover {
+    color: var(--nm-accent);
+    transform: translateX(4px);
+}
+
+.nm-chapter-link:active {
+    box-shadow: inset 3px 3px 6px var(--nm-shadow-dark),
+                inset -3px -3px 6px var(--nm-shadow-light);
+    transform: translateX(0);
+}
+
+/* Floating Theme Toggle & Footer */
+#themeToggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1050;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--nm-surface) !important;
+    color: var(--nm-text) !important;
+    box-shadow: 7px 7px 15px var(--nm-shadow-dark),
+                -7px -7px 15px var(--nm-shadow-light);
+    border: 1px solid var(--nm-border) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    transition: all 0.25s ease;
+}
+
+#themeToggle:hover {
+    transform: translateY(-3px) rotate(12deg);
+    color: var(--nm-accent) !important;
+}
+
+#themeToggle:active {
+    box-shadow: inset 4px 4px 8px var(--nm-shadow-dark),
+                inset -4px -4px 8px var(--nm-shadow-light);
+    transform: translateY(0);
+}
+
+#footer {
+    background: var(--nm-surface) !important;
+    box-shadow: 0 -8px 20px var(--nm-shadow-dark);
+    border-top: 1px solid var(--nm-border);
+    color: var(--nm-text) !important;
+}
+

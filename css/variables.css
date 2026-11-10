@@ -1,0 +1,60 @@
+/* ==========================================================================
+   1. THEME TOKENS & BASE RESET (css/variables.css)
+   Edit this file to change colors, shadow tones, or border radii.
+   ========================================================================== */
+
+:root,
+[data-bs-theme="dark"] {
+    --nm-bg: #21252B;
+    --nm-surface: #21252B;
+    --nm-surface-soft: #252A31;
+    --nm-shadow-light: #2C313A;
+    --nm-shadow-dark: #16191D;
+    --nm-text: #F1F5F9;
+    --nm-text-muted: #94A3B8;
+    --nm-accent: #10B981;
+    --nm-accent-hover: #34D399;
+    --nm-accent-soft: rgba(16, 185, 129, 0.14);
+    --nm-secondary: #38BDF8;
+    --nm-secondary-soft: rgba(56, 189, 248, 0.14);
+    --nm-rose: #F43F5E;
+    --nm-rose-soft: rgba(244, 63, 94, 0.15);
+    --nm-border: rgba(255, 255, 255, 0.05);
+    --nm-navbar-bg: rgba(33, 37, 43, 0.88);
+    --nm-radius-lg: 26px;
+    --nm-radius-md: 18px;
+    --nm-radius-sm: 12px;
+}
+
+[data-bs-theme="light"] {
+    --nm-bg: #E2E8F0;
+    --nm-surface: #E2E8F0;
+    --nm-surface-soft: #E8EEF5;
+    --nm-shadow-light: #FFFFFF;
+    --nm-shadow-dark: #BEC8D6;
+    --nm-text: #0F172A;
+    --nm-text-muted: #475569;
+    --nm-accent: #059669;
+    --nm-accent-hover: #10B981;
+    --nm-accent-soft: rgba(5, 150, 105, 0.12);
+    --nm-secondary: #0284C7;
+    --nm-secondary-soft: rgba(2, 132, 199, 0.12);
+    --nm-rose: #E11D48;
+    --nm-rose-soft: rgba(225, 29, 72, 0.12);
+    --nm-border: rgba(255, 255, 255, 0.55);
+    --nm-navbar-bg: rgba(226, 232, 240, 0.88);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+}
+
+body {
+    background-color: var(--nm-bg) !important;
+    color: var(--nm-text) !important;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    transition: background-color 0.35s ease, color 0.35s ease;
+    overflow-x: hidden;
+}
+

@@ -1,0 +1,253 @@
+/* ==========================================================================
+   4. GALLERY COMPONENTS (css/components.css)
+   Recessed carousels, person cards, inset photo bezels, heart toggle & lightbox.
+   ========================================================================== */
+
+/* Recessed Carousel Wells */
+.nm-carousel-well {
+    padding: 18px;
+    border-radius: var(--nm-radius-lg);
+    background: var(--nm-surface);
+    box-shadow: inset 8px 8px 16px var(--nm-shadow-dark),
+                inset -8px -8px 16px var(--nm-shadow-light);
+}
+
+.project-carousel,
+#carouselExampleAutoplaying {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.project-carousel .carousel-item img {
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.94);
+    transition: transform 0.6s ease;
+}
+
+.project-carousel .carousel-item:hover img {
+    transform: scale(1.02);
+}
+
+.project-carousel .carousel-caption {
+    background: rgba(15, 23, 42, 0.68);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    bottom: 1.5rem;
+    max-width: 540px;
+    margin: 0 auto;
+    color: #F8FAFC;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.project-carousel .carousel-caption h5 {
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.25rem;
+}
+
+.project-carousel .carousel-caption p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.nm-carousel-control {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sculpted Person Cards & Inset Photo Bezels */
+.nm-person-card {
+    background: var(--nm-surface) !important;
+    border-radius: var(--nm-radius-lg) !important;
+    box-shadow: 8px 8px 16px var(--nm-shadow-dark),
+                -8px -8px 16px var(--nm-shadow-light);
+    border: 1px solid var(--nm-border) !important;
+    padding: 1.1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.28s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.nm-person-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 12px 12px 24px var(--nm-shadow-dark),
+                -12px -12px 24px var(--nm-shadow-light);
+}
+
+.nm-person-card:active {
+    transform: translateY(-1px);
+    box-shadow: inset 5px 5px 10px var(--nm-shadow-dark),
+                inset -5px -5px 10px var(--nm-shadow-light);
+}
+
+.nm-photo-bezel {
+    padding: 10px;
+    border-radius: 18px;
+    background: var(--nm-surface);
+    box-shadow: inset 5px 5px 10px var(--nm-shadow-dark),
+                inset -5px -5px 10px var(--nm-shadow-light);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.nm-photo-bezel img {
+    width: 100%;
+    aspect-ratio: 4 / 4.2;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 12px;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.nm-person-card:hover .nm-photo-bezel img {
+    transform: scale(1.05);
+}
+
+.nm-zoom-hint {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(6px);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    opacity: 0;
+    transform: scale(0.85);
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.nm-person-card:hover .nm-zoom-hint {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nm-card-title {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--nm-text);
+    margin-bottom: 0.25rem;
+}
+
+.nm-card-subtitle {
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--nm-text-muted);
+    font-weight: 700;
+}
+
+.nm-card-desc {
+    font-size: 0.88rem;
+    color: var(--nm-text-muted);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Interactive Heart Button */
+.nm-heart-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--nm-border);
+    background: var(--nm-surface);
+    color: var(--nm-text-muted);
+    box-shadow: 4px 4px 8px var(--nm-shadow-dark),
+                -4px -4px 8px var(--nm-shadow-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
+}
+
+.nm-heart-btn:hover {
+    color: var(--nm-rose);
+    transform: scale(1.1);
+}
+
+.nm-heart-btn.liked {
+    color: var(--nm-rose);
+    box-shadow: inset 3px 3px 6px var(--nm-shadow-dark),
+                inset -3px -3px 6px var(--nm-shadow-light);
+    animation: nmHeartPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes nmHeartPop {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.22); }
+    100% { transform: scale(1); }
+}
+
+/* Neumorphic Lightbox Modal */
+.nm-modal-content {
+    background: var(--nm-surface) !important;
+    color: var(--nm-text) !important;
+    border-radius: var(--nm-radius-lg) !important;
+    box-shadow: 14px 14px 32px rgba(0, 0, 0, 0.5),
+                -6px -6px 20px var(--nm-shadow-light);
+    border: 1px solid var(--nm-border) !important;
+}
+
+.nm-lightbox-img-well {
+    padding: 12px;
+    border-radius: 20px;
+    background: var(--nm-surface);
+    box-shadow: inset 6px 6px 12px var(--nm-shadow-dark),
+                inset -6px -6px 12px var(--nm-shadow-light);
+}
+
+.nm-lightbox-img-well img {
+    width: 100%;
+    max-height: 440px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 14px;
+    display: block;
+}
+
+/* Filter Animation */
+.nm-fade-item {
+    animation: nmFadeIn 0.32s ease forwards;
+}
+
+@keyframes nmFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
